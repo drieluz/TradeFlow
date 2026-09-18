@@ -1,0 +1,283 @@
+.extrato {
+  min-height: 100vh;
+
+  background:
+    radial-gradient(
+      circle at 85% 10%,
+      rgba(0, 255, 140, 0.08),
+      transparent 28%
+    ),
+    #070b0d;
+
+  color: #ffffff;
+
+  padding: 0 50px 60px;
+
+  box-sizing: border-box;
+}
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+.extrato-header {
+  max-width: 1250px;
+
+  height: 86px;
+
+  margin: 0 auto 55px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  border-bottom: 1px solid #1d292c;
+}
+
+.extrato-brand {
+  display: flex;
+
+  align-items: center;
+
+  height: 40px;
+
+  padding-right: 35px;
+
+  border-right: 1px solid #334044;
+}
+
+.extrato-brand h1 {
+  margin: 0;
+
+  color: #f5f7f8;
+
+  font-size: 29px;
+
+  font-weight: 700;
+
+  letter-spacing: -1px;
+}
+
+.extrato-brand h1 span {
+  color: #00e676;
+}
+
+/* =========================
+   CONTEÚDO
+========================= */
+
+.extrato-content {
+  max-width: 1250px;
+
+  margin: 0 auto;
+}
+
+/* =========================
+   INTRODUÇÃO
+========================= */
+
+.extrato-intro {
+  margin-bottom: 30px;
+}
+
+.extrato-intro span {
+  color: #00e676;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+.extrato-intro h2 {
+  margin: 9px 0 8px;
+
+  color: #ffffff;
+
+  font-size: 30px;
+
+  font-weight: 600;
+}
+
+.extrato-intro p {
+  max-width: 650px;
+
+  margin: 0;
+
+  color: #89969c;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+}
+
+/* =========================
+   TABELA
+========================= */
+
+.extrato-table-section {
+  background: #0c1215;
+
+  border: 1px solid #1c292d;
+
+  border-radius: 14px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.20);
+}
+
+.extrato-table {
+  width: 100%;
+}
+
+.extrato-row {
+  display: grid;
+
+  grid-template-columns:
+    1.1fr
+    0.8fr
+    2fr
+    1fr
+    1fr;
+
+  gap: 20px;
+
+  align-items: center;
+
+  padding: 18px 22px;
+
+  box-sizing: border-box;
+
+  border-bottom: 1px solid #172327;
+
+  color: #89969c;
+
+  font-size: 13px;
+}
+
+.extrato-row:last-child {
+  border-bottom: none;
+}
+
+.extrato-header-row {
+  background: #0a1012;
+
+  color: #66757b;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.8px;
+}
+
+.extrato-row span {
+  min-width: 0;
+}
+
+/* =========================
+   VALORES
+========================= */
+
+.extrato-row .positive {
+  color: #00e676;
+
+  font-weight: 600;
+}
+
+.extrato-row .negative {
+  color: #ff6675;
+
+  font-weight: 600;
+}
+
+/* =========================
+   ESTADO VAZIO
+========================= */
+
+.extrato-empty {
+  padding: 70px 30px;
+
+  text-align: center;
+}
+
+.extrato-empty strong {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color: #f5f7f8;
+
+  font-size: 17px;
+
+  font-weight: 600;
+}
+
+.extrato-empty p {
+  max-width: 500px;
+
+  margin: 0 auto;
+
+  color: #6f7d83;
+
+  font-size: 13px;
+
+  line-height: 1.6;
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 900px) {
+
+  .extrato {
+    padding: 0 25px 40px;
+  }
+
+  .extrato-header {
+    height: auto;
+
+    padding: 20px 0;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 20px;
+  }
+
+  .extrato-brand {
+    padding-right: 0;
+
+    border-right: none;
+  }
+
+  .extrato-table-section {
+    overflow-x: auto;
+  }
+
+  .extrato-table {
+    min-width: 750px;
+  }
+
+}
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 600px) {
+
+  .extrato-intro h2 {
+    font-size: 24px;
+  }
+
+}

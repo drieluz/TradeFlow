@@ -1,0 +1,49 @@
+.platform-nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.platform-nav a,
+.platform-nav button {
+  text-decoration: none;
+
+  color: #89969c;
+
+  padding: 9px 13px;
+
+  border: none;
+  border-radius: 7px;
+
+  background: transparent;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.platform-nav a:hover {
+  color: #ffffff;
+  background: #111b1e;
+}
+
+.logout-button {
+  color: #00e676 !important;
+}
+
+.logout-button:hover {
+  color: #00e676 !important;
+  background: rgba(0, 223, 115, 0.08) !important;
+}
+
+@media (max-width: 800px) {
+
+  .platform-nav {
+    flex-wrap: wrap;
+  }
+
+}

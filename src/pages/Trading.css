@@ -1,0 +1,695 @@
+.trading {
+  min-height: 100vh;
+  background:
+    radial-gradient(
+      circle at 85% 10%,
+      rgba(0, 230, 118, 0.07),
+      transparent 28%
+    ),
+    #070b0d;
+  color: #ffffff;
+  padding: 0 50px 60px;
+  box-sizing: border-box;
+}
+
+/* CABEÇALHO */
+
+.trading-header {
+  max-width: 1250px;
+  height: 86px;
+  margin: 0 auto 55px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  border-bottom: 1px solid #1d292c;
+}
+
+.trading-brand {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  padding-right: 35px;
+  border-right: 1px solid #334044;
+}
+
+.trading-brand h1 {
+  margin: 0;
+  color: #f5f7f8;
+  font-size: 29px;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.trading-brand h1 span {
+  color: #00e676;
+}
+
+/* CONTEÚDO */
+
+.trading-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* SALDO */
+
+.balance {
+  position: relative;
+  padding: 25px;
+  margin-bottom: 20px;
+  background: #0c1215;
+  border: 1px solid #1c292d;
+  border-radius: 14px;
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.20);
+  transition: 0.25s ease;
+}
+
+.balance:hover {
+  border-color: #24543d;
+  transform: translateY(-2px);
+}
+
+.balance::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 20px;
+  width: 3px;
+  height: 38px;
+  background: #00e676;
+  border-radius: 0 3px 3px 0;
+}
+
+.balance span {
+  display: block;
+  margin-bottom: 10px;
+  padding-left: 5px;
+  color: #7f8d93;
+  font-size: 13px;
+}
+
+.balance strong {
+  display: block;
+  padding-left: 5px;
+  color: #f5f7f8;
+  font-size: 26px;
+  font-weight: 600;
+}
+
+/* BUSCAR ATIVO */
+
+.asset-search {
+  padding: 27px;
+  margin-bottom: 20px;
+  background: #0c1215;
+  border: 1px solid #1c292d;
+  border-radius: 14px;
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.18);
+}
+
+.asset-search h2 {
+  margin: 0 0 18px;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.asset-search form {
+  display: flex;
+  gap: 10px;
+}
+
+.asset-search input {
+  flex: 1;
+  box-sizing: border-box;
+  padding: 14px 15px;
+  background: #080d0f;
+  border: 1px solid #26363a;
+  border-radius: 8px;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;
+  transition: 0.2s ease;
+}
+
+.asset-search input::placeholder {
+  color: #59676d;
+}
+
+.asset-search input:focus {
+  border-color: #00a95a;
+  box-shadow:
+    0 0 0 3px rgba(0, 230, 118, 0.07);
+}
+
+.asset-search button {
+  padding: 0 25px;
+  border: none;
+  border-radius: 8px;
+  background: #00e676;
+  color: #06100b;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.asset-search button:hover {
+  background: #00c965;
+  transform: translateY(-1px);
+}
+
+/* =========================
+   HISTÓRICO DE ANÁLISE
+   PILHA LIFO
+========================= */
+
+.analysis-history {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-bottom: 24px;
+
+  padding: 18px 20px;
+
+  box-sizing: border-box;
+
+  background: #0c1215;
+
+  border: 1px solid #1c292d;
+
+  border-radius: 14px;
+}
+
+.analysis-history div {
+  min-width: 0;
+}
+
+.analysis-history div > span {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #00e676;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.8px;
+}
+
+.analysis-history p {
+  margin: 0;
+
+  color: #89969c;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+
+  word-break: break-word;
+}
+
+.analysis-history button {
+  flex-shrink: 0;
+
+  padding: 10px 15px;
+
+  background: transparent;
+
+  border: 1px solid #26353a;
+
+  border-radius: 8px;
+
+  color: #89969c;
+
+  font-family: inherit;
+
+  font-size: 12px;
+
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.analysis-history button:hover:not(:disabled) {
+  border-color: #00e676;
+
+  color: #00e676;
+
+  background: rgba(0, 230, 118, 0.05);
+}
+
+.analysis-history button:disabled {
+  opacity: 0.35;
+
+  cursor: not-allowed;
+}
+
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 600px) {
+
+  .analysis-history {
+    flex-direction: column;
+
+    align-items: stretch;
+
+  }
+
+  .analysis-history button {
+    width: 100%;
+  }
+
+}
+
+
+/* INFORMAÇÕES DO ATIVO */
+
+.asset-info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.asset-info div {
+  padding: 22px;
+  background: #0c1215;
+  border: 1px solid #1c292d;
+  border-radius: 14px;
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.16);
+  transition: 0.2s ease;
+}
+
+.asset-info div:hover {
+  border-color: #24543d;
+  transform: translateY(-2px);
+}
+
+.asset-info span {
+  display: block;
+  margin-bottom: 10px;
+  color: #7f8d93;
+  font-size: 12px;
+}
+
+.asset-info strong {
+  display: block;
+  color: #f5f7f8;
+  font-size: 21px;
+  font-weight: 600;
+}
+
+.asset-info div:last-child strong {
+  color: #00e676;
+}
+
+/* ENVIAR ORDEM */
+
+.order {
+  padding: 28px;
+  background: #0c1215;
+  border: 1px solid #1c292d;
+  border-radius: 14px;
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.20);
+}
+
+.order h2 {
+  margin: 0 0 22px;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.order label {
+  display: block;
+  margin-bottom: 8px;
+  color: #89969c;
+  font-size: 13px;
+}
+
+.order input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 14px 15px;
+  background: #080d0f;
+  border: 1px solid #26363a;
+  border-radius: 8px;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;
+  transition: 0.2s ease;
+}
+
+.order input:focus {
+  border-color: #00a95a;
+  box-shadow:
+    0 0 0 3px rgba(0, 230, 118, 0.07);
+}
+
+.order input::placeholder {
+  color: #59676d;
+}
+
+/* BOTÕES */
+
+.order-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.order-buttons button {
+  padding: 14px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.buy-button {
+  background: #00e676;
+  color: #06100b;
+}
+
+.buy-button:hover {
+  background: #00c965;
+  transform: translateY(-1px);
+}
+
+.sell-button {
+  background: #151d20;
+  border-color: #334146 !important;
+  color: #f0f3f4;
+}
+
+.sell-button:hover {
+  background: #1b2529;
+  border-color: #56656b !important;
+  transform: translateY(-1px);
+}
+
+/* MENSAGEM */
+
+.order-message {
+  margin: 18px 0 0;
+  padding: 13px 15px;
+  background: #10191b;
+  border: 1px solid #1d3028;
+  border-radius: 8px;
+  color: #a8b4b8;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* MERCADOS DISPONÍVEIS */
+
+.available-markets {
+  margin-bottom: 24px;
+}
+
+.section-title {
+  margin-bottom: 16px;
+}
+
+.section-title h2 {
+  margin: 0 0 6px;
+
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.section-title p {
+  margin: 0;
+
+  color: #89969c;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.market-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.market-item {
+  width: 100%;
+  min-height: 105px;
+
+  padding: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  box-sizing: border-box;
+
+  background: #0c1215;
+
+  border: 1px solid #1c292d;
+  border-radius: 14px;
+
+  color: #ffffff;
+
+  font-family: inherit;
+  text-align: left;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.16);
+
+  transition: 0.2s ease;
+}
+
+.market-item:hover {
+  border-color: #24543d;
+  transform: translateY(-2px);
+}
+
+.market-item.selected {
+  border-color: #00e676;
+
+  box-shadow:
+    0 0 0 1px rgba(0, 230, 118, 0.12),
+    0 8px 25px rgba(0, 0, 0, 0.16);
+}
+
+.market-item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.market-item-info strong {
+  color: #f5f7f8;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.market-item-info span {
+  color: #7f8d93;
+  font-size: 12px;
+}
+
+.market-item-value {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+.market-item-value strong {
+  color: #f5f7f8;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.market-item-value span {
+  color: #00e676;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* RESPONSIVO */
+
+@media (max-width: 900px) {
+
+  .trading {
+    padding: 0 25px 40px;
+  }
+
+  .trading-header {
+    height: auto;
+    padding: 20px 0;
+
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 20px;
+  }
+
+  .trading-brand {
+    padding-right: 0;
+    border-right: none;
+  }
+
+  .asset-info {
+    grid-template-columns: 1fr;
+  }
+
+  .market-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .asset-search form {
+    flex-direction: column;
+  }
+
+  .asset-search button {
+    padding: 14px;
+  }
+
+  .order-buttons {
+    grid-template-columns: 1fr;
+  }
+
+  .market-list {
+    grid-template-columns: 1fr;
+  }
+
+  /* MERCADOS DISPONÍVEIS */
+
+.available-markets {
+  margin-bottom: 24px;
+}
+
+.section-title {
+  margin-bottom: 16px;
+}
+
+.section-title h2 {
+  margin: 0 0 6px;
+}
+
+.section-title p {
+  margin: 0;
+  color: #89969c;
+  font-size: 14px;
+}
+
+.market-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.market-item {
+  width: 100%;
+  padding: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: #0c1215;
+
+  border: 1px solid #1c292d;
+  border-radius: 12px;
+
+  color: #ffffff;
+
+  font-family: inherit;
+  text-align: left;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.market-item:hover {
+  border-color: #00e676;
+  transform: translateY(-2px);
+}
+
+.market-item.selected {
+  border-color: #00e676;
+}
+
+.market-item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.market-item-info strong {
+  font-size: 17px;
+}
+
+.market-item-info span {
+  color: #89969c;
+  font-size: 12px;
+}
+
+.market-item-value {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+}
+
+.market-item-value strong {
+  font-size: 14px;
+}
+
+.market-item-value span {
+  color: #00e676;
+  font-size: 12px;
+}
+
+@media (max-width: 900px) {
+
+  .market-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .market-list {
+    grid-template-columns: 1fr;
+  }
+
+}
+}
